@@ -19,3 +19,10 @@ function sanar(magia, vidaInicial, vidaActual, distancia){
     }
 
 };
+
+const magia = 100;
+const vidaInicial = 50;
+const vidaActual = 10;
+const distancia = 1;
+
+sanar(magia, vidaInicial, vidaActual, distancia);
