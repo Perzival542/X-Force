@@ -1,50 +1,26 @@
-// Funcion principal
+function comprobar(cadena) {
+    let parentesisAbiertos = 0;
+    let parentesisCerrados = 0;
 
-function formaguarda(N, tipo, patron) {
-    // Comprobacion de parametros vacios
-    if(N !== null && N <= 0 || tipo !== null && tipo.length > 0 || patron !== null && patron.length > 0) {
-        return console.error("Debe ingresarse los tres parametros y la cantidad de cuadros de la guarda debe ser mayor a cero");
+    for (let index = 0; index < cadena.length; index++) {
+        if(cadena.at(index) === "("){
+            parentesisAbiertos ++
+
+        }
+
+        if (cadena.at(index) === ")") {
+            parentesisCerrados ++;
+        }
     }
 
-    // Comprobacion de los tipos de datos
-    if (typeof N !== 'number' || typeof tipo !== 'string' || typeof patron !== 'string') {
-        return console.error("Uno de los datos de los aprametros no es del tipo corespondiente");
-    } else {
-        const guarda = [];
 
+    if ((parentesisAbiertos - parentesisCerrados) === 0) {
+        console.log("true")
+    }
 
-        // Patron de la guarda
-        if (tipo.toUpperCase() === "NORMAL") {
-            while (guarda.length !== N) {
-                for(i=0; i < patron.length && guarda.length < N; i++){
-                    guarda.push(patron[i]);
-                }
-            }
-            console.log(guarda);
-        } else if (tipo.toUpperCase() === "ESPEJADA") {
-            while (guarda.length !== N) {
-                for(i=0; i < patron.length && guarda.length < N; i++){
-                    guarda.push(patron[i]);
-                }
-
-                const reversePatron = patron.split("").reverse();
-
-                for(j=0; j < reversePatron.length && guarda.length < N; j++){
-                    guarda.push(reversePatron[j]);
-                }
-            }
-            console.log(guarda);
-        } else {
-            console.error("El tipo de guarda ingresado no es correcto");
-        }
+    else{
+        console.log("false")
     }
 }
 
-// Parametros de la funcion
-const N = null;
-const tipo = "normal";
-const patron = 'abbab';
-
-// Llamda a la funcion
-formaguarda(N, tipo, patron);
-
+comprobar("((()))")
