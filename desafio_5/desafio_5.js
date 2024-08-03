@@ -1,4 +1,14 @@
-et divisores = [];
+[15:15, 3/8/2024] +54 9 3815 41-0959: const palabras = ["casa", "perro", "control", "luces","caja", "encendida", "rojo"];
+const cantidadLetras = 5;
+
+const palabrasCoincidentes = (array, n) =>{
+
+    const palabrasEncontradas = array.filter((palabra) => palabra.length == n) ;
+    return palabrasEncontradas;
+}
+
+console.log(palabrasCoincidentes(palabras, cantidadLetras));
+[16:38, 3/8/2024] +54 9 3815 41-0959: let divisores = [];
 
 let amigable = false;
 const buscarDivisores = ((num) =>{

@@ -2,9 +2,9 @@
   "name": "x-force",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "desafio_4.js",
   "scripts": {
-    "dev": "nodemon ./indx.js",
+    "desafio_4": "nodemon ./desafio_4/desafio_4.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
